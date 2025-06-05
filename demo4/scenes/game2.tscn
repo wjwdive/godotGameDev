@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=3 uid="uid://bxhxpknnf1o8x"]
+
+[ext_resource type="Texture2D" uid="uid://bl7nak7kldbso" path="res://2dres/char/1.png" id="1_u48pd"]
+[ext_resource type="Texture2D" uid="uid://b18xnsec8nkr6" path="res://2dres/char/poor-kid1.png" id="2_btr28"]
+[ext_resource type="Script" uid="uid://cpkry7h2moa3b" path="res://scripts/PlayerArea2d.cs" id="2_h21dd"]
+[ext_resource type="Script" uid="uid://c1i1i72evgcp6" path="res://scripts/RayCast2d.cs" id="4_dflkw"]
+[ext_resource type="Texture2D" uid="uid://cvpkdqr5vax4n" path="res://icon.svg" id="4_h21dd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h21dd"]
+size = Vector2(12.9554, 15.8019)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dflkw"]
+size = Vector2(131.5, 127.5)
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(-9, -20)
+
+[node name="Player" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(122, 144)
+scale = Vector2(4.61919, 4.64)
+texture = ExtResource("1_u48pd")
+
+[node name="Area2D" type="Area2D" parent="Player"]
+scale = Vector2(1.0433, 1)
+script = ExtResource("2_h21dd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
+position = Vector2(-0.632534, 0.969818)
+shape = SubResource("RectangleShape2D_h21dd")
+
+[node name="Enemy" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(174, 195)
+scale = Vector2(5.33873, 5.36)
+texture = ExtResource("2_btr28")
+
+[node name="Area2D" type="Area2D" parent="Enemy"]
+position = Vector2(-0.187309, -2.05224)
+scale = Vector2(0.949933, 1.11521)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/Area2D"]
+position = Vector2(0.374621, 1.30597)
+shape = SubResource("RectangleShape2D_h21dd")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(447, 237)
+exclude_parent = false
+collide_with_areas = true
+script = ExtResource("4_dflkw")
+
+[node name="Enemy2" type="Sprite2D" parent="."]
+position = Vector2(448, 338)
+texture = ExtResource("4_h21dd")
+
+[node name="Area2D" type="Area2D" parent="Enemy2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy2/Area2D"]
+shape = SubResource("RectangleShape2D_dflkw")
+
+[connection signal="area_entered" from="Player/Area2D" to="Player/Area2D" method="OnAreaEnter"]

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxb1e8lh54vl4"]
+
+[ext_resource type="Texture2D" uid="uid://cmln7vn3302ex" path="res://icon.svg" id="1_0e48y"]
+[ext_resource type="Script" uid="uid://sv5o6823bc42" path="res://scripts/test2d.cs" id="2_epypp"]
+[ext_resource type="Script" uid="uid://rvlmm2wxcsp4" path="res://scripts/Sprite2d2.cs" id="3_epypp"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(533, 270)
+rotation = 6.28319
+texture = ExtResource("1_0e48y")
+script = ExtResource("2_epypp")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(1027, 218)
+scale = Vector2(1.76563, 1.76563)
+texture = ExtResource("1_0e48y")
+script = ExtResource("3_epypp")

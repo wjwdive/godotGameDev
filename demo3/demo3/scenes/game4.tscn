@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://buow5xsw3xgwn"]
+
+[ext_resource type="Script" uid="uid://d3lang4qvnwv2" path="res://scripts/scene4.cs" id="1_d4iwq"]
+[ext_resource type="Texture2D" uid="uid://dpc2ku20xoi2o" path="res://icon.svg" id="1_gj01e"]
+[ext_resource type="Script" uid="uid://c3vb0ufb8xagh" path="res://scripts/scene4button.cs" id="3_h3fyp"]
+[ext_resource type="Script" uid="uid://h65md7xpjhyw" path="res://scripts/scene4SpriteA.cs" id="4_534pe"]
+[ext_resource type="Script" uid="uid://u542mxtatywv" path="res://scripts/scene4Sprite2DB.cs" id="5_impvl"]
+
+[node name="game4" type="Node2D"]
+script = ExtResource("1_d4iwq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(655, 233)
+texture = ExtResource("1_gj01e")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 114.0
+offset_top = 204.0
+offset_right = 185.0
+offset_bottom = 235.0
+text = "click me
+"
+script = ExtResource("3_h3fyp")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 400.0
+offset_top = 41.0
+offset_right = 528.0
+offset_bottom = 64.0
+text = "点击按钮发射信号，删除精灵"
+
+[node name="Sprite2DA" type="Sprite2D" parent="."]
+position = Vector2(159, 444)
+texture = ExtResource("1_gj01e")
+script = ExtResource("4_534pe")
+
+[node name="Sprite2DB" type="Sprite2D" parent="."]
+position = Vector2(427, 446)
+texture = ExtResource("1_gj01e")
+script = ExtResource("5_impvl")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 118.0
+offset_top = 293.0
+offset_right = 486.0
+offset_bottom = 368.0
+text = "按上，可以从左边精灵发射信号，让右边精灵接受。
+这可以在两个节点距离十分远的时候实现消息传递
+"

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cp7q3yapupk4p"]
+
+[ext_resource type="Texture2D" uid="uid://dpc2ku20xoi2o" path="res://icon.svg" id="1_7pxbb"]
+[ext_resource type="Script" uid="uid://dyu1wawver68" path="res://scripts/scene2.cs" id="1_u48pd"]
+[ext_resource type="Script" uid="uid://bprvaphv38wmp" path="res://scripts/Scene2Sprite2d2.cs" id="3_btr28"]
+
+[node name="Game2" type="Node2D"]
+script = ExtResource("1_u48pd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(505, 212)
+texture = ExtResource("1_7pxbb")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+script = ExtResource("3_btr28")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 476.0
+offset_top = 43.0
+offset_right = 516.0
+offset_bottom = 66.0
+text = "左键回到上一场景，按右键，进入下一个场景"

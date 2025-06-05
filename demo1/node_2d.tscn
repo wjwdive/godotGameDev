@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://beml51rgb036s"]
+
+[ext_resource type="Texture2D" uid="uid://b66ee63n54ok8" path="res://icon.svg" id="1_wtcfe"]
+[ext_resource type="Script" uid="uid://op6qb4p11i6l" path="res://scripts/character.cs" id="2_0e48y"]
+[ext_resource type="Script" uid="uid://dp4xsml32lj2i" path="res://InputTest.cs" id="3_epypp"]
+[ext_resource type="Script" uid="uid://fv2hnt0ciy1b" path="res://Test.cs" id="4_0hol4"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(253, 175)
+texture = ExtResource("1_wtcfe")
+script = ExtResource("2_0e48y")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Sprite2D"]
+position = Vector2(-253, -175)
+
+[node name="InputTest" type="Node" parent="."]
+script = ExtResource("3_epypp")
+
+[node name="Test" type="Node" parent="."]
+script = ExtResource("4_0hol4")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 369.0
+offset_top = 44.0
+offset_right = 449.0
+offset_bottom = 93.0
+text = "第一个场景
+"

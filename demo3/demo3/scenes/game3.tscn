@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://mxianum5gqxt"]
+
+[ext_resource type="Texture2D" uid="uid://bhr1mkaqofsbe" path="res://images/background1.png" id="1_24ans"]
+[ext_resource type="Script" uid="uid://dovsmxbvvnwnr" path="res://scripts/scene3.cs" id="1_igwv8"]
+[ext_resource type="Texture2D" uid="uid://dpc2ku20xoi2o" path="res://icon.svg" id="3_avuck"]
+[ext_resource type="Script" uid="uid://b61j8ocgj8o0" path="res://Player.cs" id="4_6fpkw"]
+
+[node name="game3" type="Node2D"]
+script = ExtResource("1_igwv8")
+
+[node name="Background1" type="Sprite2D" parent="."]
+position = Vector2(570, 271)
+scale = Vector2(1.13477, 0.983398)
+texture = ExtResource("1_24ans")
+
+[node name="Player" type="Sprite2D" parent="." groups=["player"]]
+position = Vector2(156, 234)
+texture = ExtResource("3_avuck")
+script = ExtResource("4_6fpkw")
+
+[node name="Enemy1" type="Sprite2D" parent="." groups=["enemy"]]
+position = Vector2(596, 268)
+texture = ExtResource("3_avuck")
+
+[node name="Enemy2" type="Sprite2D" parent="." groups=["enemy"]]
+position = Vector2(685, 70)
+texture = ExtResource("3_avuck")
+
+[node name="Enemy3" type="Sprite2D" parent="." groups=["enemy"]]
+position = Vector2(881, 278)
+texture = ExtResource("3_avuck")
+
+[node name="Boos" type="Sprite2D" parent="." groups=["enemy"]]
+position = Vector2(655, 482)
+texture = ExtResource("3_avuck")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 63.0
+offset_top = 16.0
+offset_right = 603.0
+offset_bottom = 39.0
+text = "按left,回到上一个场景，按下，消灭右边4个精灵。按up，将玩家变为敌人。"

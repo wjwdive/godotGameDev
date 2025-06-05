@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://bhq5o3j5638y"]
+
+[ext_resource type="Script" uid="uid://jaae07nvxdfy" path="res://scripts/Game1Script.cs" id="1_uwbbb"]
+[ext_resource type="Texture2D" uid="uid://cbgtaukkm1cxj" path="res://icon.svg" id="2_7gr8o"]
+[ext_resource type="Script" uid="uid://btja0ecc3roso" path="res://scripts/RigidBody2dPlayer.cs" id="3_7gr8o"]
+[ext_resource type="Texture2D" uid="uid://bl7nak7kldbso" path="res://2dres/char/1.png" id="3_fpjbw"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_uwbbb"]
+rough = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4vge2"]
+size = Vector2(655, 129)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_04qyp"]
+radius = 11.0294
+
+[node name="Node2D" type="Node2D"]
+rotation = 0.00151226
+script = ExtResource("1_uwbbb")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+rotation = -0.0273917
+physics_material_override = SubResource("PhysicsMaterial_uwbbb")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(592.5, 356)
+scale = Vector2(5.10156, 1)
+texture = ExtResource("2_7gr8o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(591.5, 356.5)
+shape = SubResource("RectangleShape2D_4vge2")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(618, 209)
+lock_rotation = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("3_7gr8o")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+texture_filter = 1
+scale = Vector2(2.52, 2.52)
+texture = ExtResource("3_fpjbw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(0, 3)
+scale = Vector2(1.36, 1.16)
+shape = SubResource("CapsuleShape2D_04qyp")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[connection signal="body_entered" from="RigidBody2D" to="RigidBody2D" method="BodyEntered"]
+[connection signal="body_exited" from="RigidBody2D" to="RigidBody2D" method="BodyExit"]

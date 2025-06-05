@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://clh2qbmmtw07j"]
+
+[ext_resource type="Script" uid="uid://bd2m5m5ubep5o" path="res://scripts/scene1.cs" id="1_imevv"]
+[ext_resource type="PackedScene" uid="uid://cp7q3yapupk4p" path="res://scenes/game2.tscn" id="2_7gr8o"]
+[ext_resource type="Script" uid="uid://2x5x2rkogydi" path="res://scripts/Sprite2d.cs" id="2_uwbbb"]
+[ext_resource type="Texture2D" uid="uid://dpc2ku20xoi2o" path="res://icon.svg" id="3_7gr8o"]
+[ext_resource type="Script" uid="uid://b81lrqmxaauby" path="res://scripts/Sprite2dc1.cs" id="5_fpjbw"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_imevv")
+newScene2 = ExtResource("2_7gr8o")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(137, 111)
+scale = Vector2(0.367188, 0.367188)
+texture = ExtResource("3_7gr8o")
+script = ExtResource("2_uwbbb")
+
+[node name="Sprite2DC1" type="Sprite2D" parent="Sprite2D"]
+z_as_relative = false
+position = Vector2(73.5319, 65.3617)
+texture = ExtResource("3_7gr8o")
+script = ExtResource("5_fpjbw")
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 143.0
+offset_top = 21.0
+offset_right = 183.0
+offset_bottom = 44.0
+text = "左右键进入下一场景"
